@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Tollgate usage</title>
+</head>
+<body>
+    <h3>Toll Gate Usage Report</h3>
+
+    <table>
+        <thead>
+            <tr>
+            <th>Station Id</th>
+            <th>Licence</th>
+            <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="toll : ${tolls}">
+                <td th:text="${toll.stationId}"></td>
+                <td th:text="${toll.licencePlate}"></td>
+                <td th:text="${toll.timestamp}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
